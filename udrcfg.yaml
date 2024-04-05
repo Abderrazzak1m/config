@@ -1,0 +1,22 @@
+info:
+  version: 1.0.2
+  description: UDR initial local configuration
+
+configuration:
+  sbi: # Service-based interface information
+    scheme: http # the protocol for sbi (http or https)
+    registerIPv4: X.X.X.X # IP used to register to NRF
+    bindingIPv4: X.X.X.X  # IP used to bind the service
+    port: XXXX # port used to bind the service
+    tls: # the local path of TLS key
+      pem: cert/udr.pem # UDR TLS Certificate
+      key: cert/udr.key # UDR TLS Private key
+  mongodb:
+    name: free5gc # Database name in MongoDB
+    url: mongodb://localhost:27017 # URL of MongoDB
+  nrfUri: http://X.X.X.X:XXXX # a valid URI of NRF
+
+logger: # log output setting
+  enable: true # true or false
+  level: info # how detailed to output, value: trace, debug, info, warn, error, fatal, panic
+  reportCaller: false # enable the caller report or not, value: true or false
